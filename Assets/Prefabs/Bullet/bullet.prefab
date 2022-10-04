@@ -223,6 +223,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedB: 50
   timeToDestroy: 1
+  OBJ_BAX: {fileID: 3974506446246185601, guid: 932020e37cbf5694882bfef4cc00f7e1, type: 3}
 --- !u!54 &-1025437046822549856
 Rigidbody:
   m_ObjectHideFlags: 0

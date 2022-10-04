@@ -8,6 +8,7 @@ public class Meteor : MonoBehaviour
     [SerializeField] private float speed;
     GameObject player;
     [SerializeField] private float distanceBetweenRAndM;
+
     void Start()
     {
         player = GameObject.FindWithTag("Player");

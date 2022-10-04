@@ -7,6 +7,8 @@ using UnityEngine.UI;
 
 public class TapSystem : MonoBehaviour
 {
+    [SerializeField] private AudioSource[] audioOfRocket;
+
     [SerializeField] private float sensitivityRb;
 
     [SerializeField] private Transform[] gameObjectsPosition; //массив элементов для системы частиц и пушки | 0 - drivers, 1 - shooting
@@ -97,10 +99,12 @@ public class TapSystem : MonoBehaviour
     {
         rb.AddForce(Vector3.up * sensitivity, ForceMode.Impulse);
         Instantiate(toInstantiateObjects[0], gameObjectsPosition[0]);
+        audioOfRocket[0].Play();
     }
 
     private void Shoot()
     {
+        audioOfRocket[1].Play(); 
         Instantiate(toInstantiateObjects[1], gameObjectsPosition[1]);
         ammo.BulletDown();
         if(ammo.bullets < 0)

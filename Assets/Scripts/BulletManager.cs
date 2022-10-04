@@ -9,6 +9,8 @@ public class BulletManager : MonoBehaviour
     [SerializeField] private float timeToDestroy;
 
     AmmoManager ammoManager;
+
+    [SerializeField] private GameObject OBJ_BAX;
     private void Start()
     {
         ammoManager = GameObject.FindWithTag("Player").GetComponent<AmmoManager>();
@@ -31,6 +33,7 @@ public class BulletManager : MonoBehaviour
     {
         if(other.gameObject.tag == "meteor")
         {
+            Instantiate(OBJ_BAX, new Vector3(other.transform.position.x, other.transform.position.y, other.transform.position.z), Quaternion.identity);
             Destroy(other.gameObject);
             ammoManager.BulletUp();
             DestroyBullet();
